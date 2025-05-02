@@ -1,0 +1,327 @@
+/* src/components/Home/Home.css */
+
+/* General Styles */
+.home-wrapper {
+    overflow-x: hidden;
+  }
+  
+  .section-title {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+  }
+  
+  /* Hero Section with Parallax Effect */
+  .hero-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    max-width: 800px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s both;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s both;
+    animation-delay: 0.3s;
+  }
+  
+  .hero-button {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeIn 1.5s both;
+    animation-delay: 0.6s;
+  }
+  
+  .hero-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Featured Carousel Styling */
+  .featured-carousel {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .carousel-image-container {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .carousel-image-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  }
+  
+  .carousel-caption {
+    bottom: 80px;
+    text-align: left;
+    padding: 0 10%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 25px;
+  }
+  
+  /* Category Cards Styling */
+  .categories-section {
+    margin-top: 80px;
+  }
+  
+  .category-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .category-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .category-card:hover .category-img {
+    transform: scale(1.1);
+  }
+  
+  .category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+  }
+  
+  .category-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .category-description {
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  .category-button {
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .category-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Newsletter Section */
+  .newsletter-section {
+    margin: 80px 0 40px;
+  }
+  
+  .newsletter-container {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px !important;
+  }
+  
+  .newsletter-container h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .newsletter-container p {
+    margin-bottom: 25px;
+  }
+  
+  .newsletter-container .form-control {
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    padding-left: 20px;
+    border: none;
+  }
+  
+  .newsletter-container .btn {
+    border-radius: 0 25px 25px 0;
+    padding: 0 25px;
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+  
+  /* Loading and Error Styles */
+  .loading-container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .spinner-lg {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .loading-text {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #6c757d;
+  }
+  
+  .error-container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .carousel-image-container {
+      height: 400px;
+    }
+    
+    .carousel-caption h3 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-section {
+      height: 60vh;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .carousel-image-container {
+      height: 300px;
+    }
+    
+    .carousel-caption {
+      bottom: 30px;
+      padding: 0 5%;
+    }
+    
+    .carousel-caption h3 {
+      font-size: 1.5rem;
+    }
+  }
